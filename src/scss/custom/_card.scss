@@ -1,0 +1,77 @@
+.community-cards {
+    div[class^="col-"] {
+        padding-left: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
+    .community-card {
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+
+        .community-top {
+            display: flex;
+            margin: 0 0 0.25em 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            .community-icon {
+                height: 70px;
+                width: 70px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    border-top-left-radius: 5px;
+                }
+            }
+
+            .community-title {
+                display: flex;
+                flex-grow: 1;
+                flex-direction: column;
+                justify-content: center;
+                margin-left: 1em;
+                line-height: 1.2em;
+                overflow: hidden;
+
+                div {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+
+        .community-desc {
+            margin: 0 0.5em;
+            padding-bottom: 0.25em;
+            overflow: hidden;
+            font-size: 0.9em;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* number of lines to show */
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .community-tags {
+            margin-top: 0.5em;
+            padding: 0 0.5em 0.5em 0.5em;
+            text-align: center;
+
+            .chip {
+                padding: 0 0.5em 0.1em 0.5em;
+                border-radius: 1em;
+                margin-right: 0.25em;
+                color: black;
+            }
+        }
+    }
+}

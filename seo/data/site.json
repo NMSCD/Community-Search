@@ -1,0 +1,32 @@
+{
+    "rootUrl": "https://nmsassistant.com",
+    "kurt": {
+        "name": "Kurt Lourens",
+        "email": "mailto:hi@kurtlourens.com",
+        "website": "https://kurtlourens.com",
+        "image": "https://kurtlourens.com/assets/images/KurtAvatar.svg",
+        "additionalName": "KhaozTopsy",
+        "twitter": "@KhaozTopsy",
+        "location": "Almere, The Netherlands"
+    },
+    "meta": {
+        "appName": "Assistant for No Man's Sky",
+        "title": "Assistant for No Man's Sky",
+        "description": "Available on the Google Play and Apple App Store. Get Crafting, Refining and Cooking Recipes for the game No Man&#39;s Sky!!"
+    },
+    "twitter": {
+        "handle": "@AssistantNMS",
+        "imageAlt": "Logo of the Assistant Apps",
+        "metaImageSize": "summary_large_image"
+    },
+    "assistantApps": {
+        "rootUrl": "https://assistantapps.com",
+        "appName": "Assistant Apps",
+        "title": "Assistant Apps by Kurt Lourens",
+        "description": "Home page of the Assistant Apps. Get the apps on Google Play, Apple App Store and on the web",
+        "version": "1.0.26",
+        "favicon": {
+            "x192": "assets/favicon/android-icon-192x192.png"
+        }
+    }
+}

@@ -1,3 +1,4 @@
+import { Box, Button, Center, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader } from '@hope-ui/solid';
 import classNames from 'classnames';
 import { Component, createSignal } from 'solid-js';
 import { getTagColour } from '../../constants/airTable';
@@ -6,10 +7,10 @@ import { CommunityListItem } from '../../contracts/communityList';
 
 interface IProps {
     item: CommunityListItem;
+    openModal: () => void;
 }
 
 export const CommunityCard: Component<IProps> = (props: IProps) => {
-
 
     /*
     
@@ -26,8 +27,8 @@ export const CommunityCard: Component<IProps> = (props: IProps) => {
 
 
     return (
-        <div class="col-3 community-card-bg">
-            <div class={classNames('community-card', { 'pointer': props.item.link?.length > 0 })}>
+        <Box class="community-card-bg" onClick={() => props.openModal()}>
+            <Box class={classNames('community-card', { 'pointer': props.item.link?.length > 0 })}>
                 <div class="community-top">
                     <div class="community-icon">
                         <img src={props.item.icon} alt={props.item.name} />
@@ -39,10 +40,13 @@ export const CommunityCard: Component<IProps> = (props: IProps) => {
                     </div>
                 </div>
                 {
-                    props.item.desc &&
-                    <div class="community-desc">
-                        {props.item.desc}
-                    </div>
+                    props.item.desc && (
+                        <Center class="community-desc-center">
+                            <div class="community-desc">
+                                {props.item.desc}
+                            </div>
+                        </Center>
+                    )
                 }
                 <div class="community-tags">
                     {
@@ -51,7 +55,7 @@ export const CommunityCard: Component<IProps> = (props: IProps) => {
                         ))
                     }
                 </div>
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
 }

@@ -1,6 +1,37 @@
-@import 'custom/card';
-@import 'custom/table';
+@import "custom/scrollbar";
+@import "custom/background";
+@import "custom/card";
+@import "custom/table";
+
+body {
+    background-color: rgb(50, 50, 50);
+}
 
 .pointer {
     cursor: pointer;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.row.no-space {
+    margin-left: 0;
+    margin-right: 0.5em;
+}
+
+.inner.wide {
+    max-width: 86em !important;
 }

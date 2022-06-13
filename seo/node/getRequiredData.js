@@ -98,7 +98,8 @@ async function generateFullJson() {
                 console.error({ err });
                 return;
             }
-            fs.writeFile(`../src/data/${currentTable.json}`, JSON.stringify(allItems), ['utf8'], () => { });
+            console.log('write file ' + allItems.length);
+            fs.writeFile(`../src/assets/data/${currentTable.json}`, JSON.stringify(allItems), ['utf8'], () => { });
         });
     }
 }

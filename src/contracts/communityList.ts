@@ -4,7 +4,7 @@ export interface CommunityListItem {
     icon: string;
     banners?: Array<string>;
     tags: Array<string>;
-    link: Array<string>;
+    links: Array<string>;
     sort?: number;
     desc?: string;
     group?: string;

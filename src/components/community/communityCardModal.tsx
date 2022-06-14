@@ -5,6 +5,7 @@ import { getTagColour } from '../../constants/airTable';
 import { CommunityListItem } from '../../contracts/communityList';
 import { BasicLink } from '../common/link';
 import { CommunityBannerSlider } from './communityBannerSlider';
+import { CommunityTagsChips } from './communityTagsChips';
 
 
 interface IProps {
@@ -15,7 +16,10 @@ interface IProps {
 export const CommunityCardModal: Component<IProps> = (props: IProps) => {
 
     const renderSingleLink = (link: string) => {
-        const cleanLink = link
+        const linkRegex = new RegExp('^(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/?\n]+)');
+        const regexArr = linkRegex.exec(link);
+        const preCleanLink = ((regexArr?.length ?? 0) > 0) ? regexArr![0] : link;
+        const cleanLink = preCleanLink
             .replaceAll('https://', '')
             .replaceAll('http://', '')
             .replaceAll('www.', '')
@@ -60,12 +64,12 @@ export const CommunityCardModal: Component<IProps> = (props: IProps) => {
                         <p>{props.item.desc}</p>
                     </Box>
                 </Show>
-                <Show when={(props.item.link?.length ?? 0) > 0}>
+                <Show when={(props.item.links?.length ?? 0) > 0}>
                     <Box pt="1em">
                         <small>Links:</small>
                         <Box pl="1.5em">
                             <ul>
-                                <For each={props.item.link}>
+                                <For each={props.item.links}>
                                     {renderSingleLink}
                                 </For>
                             </ul>
@@ -74,13 +78,7 @@ export const CommunityCardModal: Component<IProps> = (props: IProps) => {
                 </Show>
                 <Box pt="1em">
                     <small>Tags:</small>
-                    <div class="community-tags">
-                        <For each={props.item.tags}>
-                            {tag => (
-                                <span class="chip" style={{ "background-color": getTagColour(tag) }}>{tag}</span>
-                            )}
-                        </For>
-                    </div>
+                    <CommunityTagsChips tags={props.item.tags} />
                 </Box>
             </ModalBody>
             <ModalFooter>

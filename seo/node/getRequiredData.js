@@ -38,8 +38,8 @@ const tables = {
                 target: 'tags',
             },
             {
-                source: 'Link',
-                target: 'link',
+                source: 'Links',
+                target: 'links',
                 mapping: (v) => v.split(',').filter(item => item?.length > 0),
             },
             {
@@ -48,22 +48,22 @@ const tables = {
             }
         ]
     },
-    Group: {
-        name: 'Group',
-        view: 'AvailableGroups',
-        json: 'communityLookup.json',
-        records: [
-            {
-                source: 'Name',
-                target: 'name',
-            },
-            {
-                source: 'Icon',
-                target: 'icon',
-                mapping: (v) => v?.[0]?.url ?? '',
-            },
-        ],
-    },
+    // Group: {
+    //     name: 'Group',
+    //     view: 'AvailableGroups',
+    //     json: 'communityLookup.json',
+    //     records: [
+    //         {
+    //             source: 'Name',
+    //             target: 'name',
+    //         },
+    //         {
+    //             source: 'Icon',
+    //             target: 'icon',
+    //             mapping: (v) => v?.[0]?.url ?? '',
+    //         },
+    //     ],
+    // },
 };
 
 async function generateFullJson() {

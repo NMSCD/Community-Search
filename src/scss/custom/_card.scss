@@ -140,3 +140,24 @@
 .hope-modal__body .community-tags {
     margin-top: 0.25em;
 }
+
+.hope-select__trigger {
+    .community-tags {
+        display: inline-block;
+        .chip {
+            padding-right: 1.5em;
+            position: relative;
+            .hope-select__tag-close-button {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                display: inline-block;
+                transform: translateY(-50%);
+                border-radius: 1em;
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.5);
+                }
+            }
+        }
+    }
+}

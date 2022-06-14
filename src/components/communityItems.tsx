@@ -1,4 +1,4 @@
-import { Box, Container, Divider, Flex, Heading, Input, Modal, ModalOverlay, Select, SelectContent, SelectIcon, SelectListbox, SelectOption, SelectOptionIndicator, SelectOptionText, SelectPlaceholder, SelectTrigger, SelectValue, SimpleGrid, Text } from '@hope-ui/solid';
+import { Box, Container, Divider, Flex, Heading, Input, Modal, ModalOverlay, Select, SelectContent, SelectIcon, SelectListbox, SelectOption, SelectOptionIndicator, SelectOptionText, SelectPlaceholder, SelectTagCloseButton, SelectTrigger, SelectValue, SimpleGrid, Text } from '@hope-ui/solid';
 import { Component, createMemo, createSignal, For } from 'solid-js';
 import list from '../assets/data/communityList.json';
 import { getTagColour } from '../constants/airTable';
@@ -7,6 +7,7 @@ import { CommunityListItem } from '../contracts/communityList';
 import { CommunityAddLink } from './community/communityAddLink';
 import { CommunityCard } from './community/communityCard';
 import { CommunityCardModal } from './community/communityCardModal';
+import { CommunityTagsChips } from './community/communityTagsChips';
 
 
 export const CommunityItems: Component = () => {
@@ -27,7 +28,7 @@ export const CommunityItems: Component = () => {
             if ((ci.desc?.length ?? 0) > 0) {
                 if (ci.desc!.toUpperCase().includes(searchText()!?.toUpperCase())) return true;
             }
-            const matchingLinks = ci.link.filter(link => link.toUpperCase().includes(searchText()!?.toUpperCase()));
+            const matchingLinks = ci.links.filter(link => link.toUpperCase().includes(searchText()!?.toUpperCase()));
             if (matchingLinks.length > 0) return true;
         }
 
@@ -43,7 +44,13 @@ export const CommunityItems: Component = () => {
         return false;
     }), [searchText(), selectedTags()]);
 
-    console.log({ ...filteredList() });
+    const removeTag = (tag: string) => {
+        setSelectedTags((prev) => {
+            const newTags = (prev ?? [])?.filter(item => item != tag);
+            return newTags;
+        });
+    }
+
     return (
         <Box id="main" pb="10em">
             <Container pt="10em" pb="5em">
@@ -68,10 +75,14 @@ export const CommunityItems: Component = () => {
                     </Box>
                     <Box ml="10px" />
                     <Box flex="5">
-                        <Select multiple={true} data-value={selectedTags()} onChange={value => setSelectedTags(value)}>
+                        <Select multiple={true} value={selectedTags()} onChange={value => setSelectedTags(value)}>
                             <SelectTrigger>
                                 <SelectPlaceholder>Tags to show</SelectPlaceholder>
-                                <SelectValue />
+                                <SelectValue>
+                                    {tags =>
+                                        <CommunityTagsChips tags={tags.selectedOptions.map(so => so.textValue)} removeTag={removeTag} />
+                                    }
+                                </SelectValue>
                                 <SelectIcon />
                             </SelectTrigger>
                             <SelectContent>

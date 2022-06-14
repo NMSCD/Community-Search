@@ -1,8 +1,7 @@
-import { Box, Button, Center, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader } from '@hope-ui/solid';
+import { Box, Center } from '@hope-ui/solid';
 import classNames from 'classnames';
-import { Component, createSignal } from 'solid-js';
+import { Component, For, Show } from 'solid-js';
 import { getTagColour } from '../../constants/airTable';
-
 import { CommunityListItem } from '../../contracts/communityList';
 
 interface IProps {
@@ -11,20 +10,6 @@ interface IProps {
 }
 
 export const CommunityCard: Component<IProps> = (props: IProps) => {
-
-    /*
-    
-    id: string;
-    name: string;
-    icon: string;
-    tags: Array<string>;
-    link: string;
-    sort: number;
-    desc?: string;
-    group?: string;
-    children?: Array<CommunityListItem>;
-     */
-
 
     return (
         <Box class="community-card-bg" onClick={() => props.openModal()}>
@@ -49,12 +34,17 @@ export const CommunityCard: Component<IProps> = (props: IProps) => {
                     )
                 }
                 <div class="community-tags">
-                    {
-                        props.item.tags.map(tag => (
+                    <For each={props.item.tags}>
+                        {tag => (
                             <span class="chip" style={{ "background-color": getTagColour(tag) }}>{tag}</span>
-                        ))
-                    }
+                        )}
+                    </For>
                 </div>
+                {/* <Show when={(props.item.link?.length ?? 0) > 0}>
+                    <div class="community-link">
+                        <BasicLink href={props.item.link[0]}>⬈</BasicLink>
+                    </div>
+                </Show> */}
             </Box>
         </Box>
     );

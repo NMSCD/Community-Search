@@ -15,7 +15,7 @@ export const Header: Component = () => {
         >
             <Flex>
                 <Center pl="1em">
-                    <Image boxSize="75px" padding="0.5em" src="/assets/img/rocket.png" />
+                    <Image boxSize="75px" padding="0.5em" src="/assets/img/logo.png" />
                 </Center>
                 <Box pl="1em" flex="1">
                     <Center height="100%">

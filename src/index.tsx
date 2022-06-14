@@ -5,6 +5,7 @@ import { CustomThemeProvider } from './themeProvider';
 
 // import './scss/main.scss';
 import './scss/custom.scss';
+import 'solid-slider/slider.css';
 
 
 render(() =>

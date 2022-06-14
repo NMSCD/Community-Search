@@ -20,6 +20,11 @@ const tables = {
                 mapping: (v) => v?.[0]?.url ?? '',
             },
             {
+                source: 'Banners',
+                target: 'banners',
+                mapping: (v) => v?.flatMap(inner => (inner?.url ?? '').split(',')).filter(item => item?.length > 0),
+            },
+            {
                 source: 'Description',
                 target: 'desc',
             },
@@ -35,6 +40,7 @@ const tables = {
             {
                 source: 'Link',
                 target: 'link',
+                mapping: (v) => v.split(',').filter(item => item?.length > 0),
             },
             {
                 source: 'Sort',

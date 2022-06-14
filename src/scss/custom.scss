@@ -1,10 +1,17 @@
+@import "custom/var";
+@import "custom/fab";
 @import "custom/scrollbar";
 @import "custom/background";
 @import "custom/card";
 @import "custom/table";
+@import "custom/slider";
 
 body {
     background-color: rgb(50, 50, 50);
+
+    a {
+        color: $linkColour;
+    }
 }
 
 .pointer {
@@ -25,6 +32,13 @@ body {
     user-select: none;
     /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
+}
+
+.max-lines-1 {
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
 }
 
 .row.no-space {

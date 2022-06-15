@@ -4,7 +4,7 @@ This project aims to be the "Yellow pages" of the NMS community. Our goal is to 
 
 <div align="center">
 
-  ![madeWithLove](./.github/img/made-with-love.svg)
+  ![madeWithLove](./.github/badges/made-with-love.svg)
   [![Supported by the No Man's Sky Community Developers & Designers](https://raw.githubusercontent.com/NMSCD/About/master/badge/purple-ftb.svg)][nmscd] 
 
   <br /> 

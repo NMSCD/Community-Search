@@ -1,6 +1,6 @@
 <div align="center">
 
-## 🔍 NMS Community Search
+# 🔍 NMS Community Search
 
 This project aims to be the "Yellow pages" of the NMS community. Our goal is to document the different Communities, tools, resources, builders and creators.
 
@@ -11,7 +11,7 @@ This project aims to be the "Yellow pages" of the NMS community. Our goal is to 
 </div>
 
 
-### Submitting a Community Link
+## Submitting a Community Link
 
 There are currently two methods of submitting Community Links:
 - **Easy method**: Complete this form [airtable.com/shrhZOQrrp9a9zoJk](https://airtable.com/shrhZOQrrp9a9zoJk?ref=nmscdCommunitySearchReadMe)
@@ -21,7 +21,9 @@ There are currently two methods of submitting Community Links:
 
 If your Community Link does not show up on the site after a day or two, feel free to contact the [AssistantNMS support email](mailto:support@nmsassistant.com). Multiple members have access to the support system that monitors that email address. OR you can open an issue in this repository.
 
-### Building the project locally
+<br />
+
+## Building the project locally
 
 The main logic of this solution uses SolidJS and SCSS for styling. To get the solution running, use the following commands:
 
@@ -33,6 +35,8 @@ For SEO we use HandlebarJS to template out the documents and generate as many fi
 - `cd ./seo`
 - `npm i`
 - `npm run seo`
+
+<br />
 
 ## Deployment
 

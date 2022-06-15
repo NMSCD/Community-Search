@@ -4,7 +4,7 @@
     "description": "One site to search through all of the amazing No man&#x27;s Sky communities and tools!",
     "lang": "en-US",
     "manifest_version": 2,
-    "version": "0.0.0",
+    "version": "1.0.0",
     "background_color": "#1b1f22",
     "theme_color": "#00FFFF",
     "display": "standalone",

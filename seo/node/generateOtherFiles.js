@@ -2,7 +2,7 @@ const fs = require('fs');
 const util = require('util');
 const Handlebars = require('handlebars');
 
-const pjson = require('../../package.json');
+const pjson = require('../package.json');
 
 const dateHelper = require('../handlebar/helpers/date.helper.js');
 const loudHelper = require('../handlebar/helpers/loud.helper.js');

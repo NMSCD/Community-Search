@@ -1,7 +1,7 @@
 import { Box, Container, Divider, Flex, Heading, Input, Modal, ModalOverlay, Select, SelectContent, SelectIcon, SelectListbox, SelectOption, SelectOptionIndicator, SelectOptionText, SelectPlaceholder, SelectTagCloseButton, SelectTrigger, SelectValue, SimpleGrid, Text } from '@hope-ui/solid';
 import { Component, createMemo, createSignal, For } from 'solid-js';
 import communityList from '../assets/data/communityList.json';
-import manualList from '../assets/data/communityList.json';
+import manualList from '../assets/data/manualCommunityList.json';
 import { getTagColour } from '../constants/airTable';
 import { themeColours } from '../constants/colour';
 import { CommunityListItem } from '../contracts/communityList';

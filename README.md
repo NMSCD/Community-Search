@@ -1,34 +1,39 @@
-## Usage
+## 🔍 NMS Community Search
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+This project aims to be the "Yellow pages" of the NMS community. Our goal is to document the different Communities, tools, resources, builders and creators.
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+<div align="center">
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+  ![madeWithLove](./.github/img/made-with-love.svg)
+  [![Supported by the No Man's Sky Community Developers & Designers](https://raw.githubusercontent.com/NMSCD/About/master/badge/purple-ftb.svg)][nmscd] 
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+  <br /> 
+</div>
 
-## Available Scripts
 
-In the project directory, you can run:
+### Submitting a Community Link
 
-### `npm dev` or `npm start`
+There are currently two methods of submitting Community Links:
+- **Easy method**: Complete this form [airtable.com/shrhZOQrrp9a9zoJk](https://airtable.com/shrhZOQrrp9a9zoJk?ref=nmscdCommunitySearchReadMe)
+  - We will look at your application and move it to the public data if it meets our requirements.
+- **Developer method**: You can add your community link to the [manualCommunityList.json](/src/assets/data/manualCommunityList.json) and then create a pull request.
+  - Please be sure to use urls to images that are publicly available (test your images in incognito mode)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If your Community Link does not show up on the site after a day or two, feel free to contact the [AssistantNMS support email](mailto:support@nmsassistant.com). Multiple members have access to the support system that monitors that email address. OR you can open an issue in this repository.
 
-The page will reload if you make edits.<br>
+### Building the project locally
 
-### `npm run build`
+The main logic of this solution uses SolidJS and SCSS for styling. To get the solution running, use the following commands:
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
+- `npm i`
+- `npm run dev`
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+For SEO we use HandlebarJS to template out the documents and generate as many files as possible. Part of this process fetches data from our central store of data which is in AirTable. In order to generate these files follow these steps:
+
+- `cd ./seo`
+- `npm i`
+- `npm run seo`
 
 ## Deployment
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+This site makes use of Github Actions to build the project and Github Pages to host it 💪

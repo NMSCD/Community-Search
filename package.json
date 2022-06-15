@@ -2,7 +2,7 @@
   "name": "community-search",
   "version": "0.0.0",
   "description": "",
-  "homepage": "https://airtable.com/appW3eQpG1MlolQ25/tblIZNsoJJKVOuX86/viwWvq7zLyLo2GrC7?blocks=hide",
+  "homepage": "https://nmscd.github.io/Community-Search",
   "scripts": {
     "start": "vite",
     "dev": "vite",

@@ -4,10 +4,11 @@
   "description": "Community Search seo",
   "author": "Kurt Lourens",
   "scripts": {
-    "build": "npm-run-all --sequential data:*",
+    "build": "npm-run-all --sequential data:* seo:*",
     "data:airtable": "node ./node/getAirtableData.js",
-    "data:combine": "node ./node/getRequiredData.js",
-    "data:generate-other": "node ./node/generateOtherFiles.js"
+    "seo": "npm-run-all --sequential seo:*",
+    "seo:combine": "node ./node/getRequiredData.js",
+    "seo:generate-other": "node ./node/generateOtherFiles.js"
   },
   "homepage": "https://nmsassistant.com",
   "license": "ISC",

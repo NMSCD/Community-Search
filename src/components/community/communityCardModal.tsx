@@ -17,14 +17,14 @@ export const CommunityCardModal: Component<IProps> = (props: IProps) => {
 
     const renderSingleLink = (link: string) => {
         const linkRegex = new RegExp('^(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/?\n]+)');
-        const regexArr = linkRegex.exec(link);
-        const preCleanLink = ((regexArr?.length ?? 0) > 0) ? regexArr![0] : link;
-        const cleanLink = preCleanLink
+        const preCleanLink = link
             .replaceAll('https://', '')
             .replaceAll('http://', '')
-            .replaceAll('www.', '')
+            // .replaceAll('www.', '')
             .replaceAll('/index.html', '')
             .replaceAll('.html', '');
+        const regexArr = linkRegex.exec(preCleanLink);
+        const cleanLink = ((regexArr?.length ?? 0) > 0) ? regexArr![0] : 'test:' + preCleanLink;
         return (
             <li style={{ maxWidth: '100%' }}>
                 <BasicLink href={link} title={props.item.name} additionalClassNames="max-lines-1">{cleanLink}</BasicLink>

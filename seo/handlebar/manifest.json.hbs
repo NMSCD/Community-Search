@@ -1,0 +1,27 @@
+{
+    "name": "{{{meta.title}}}",
+    "short_name": "{{meta.appName}}",
+    "description": "{{meta.description}}",
+    "lang": "en-US",
+    "manifest_version": 2,
+    "version": "{{version}}",
+    "background_color": "#1b1f22",
+    "theme_color": "{{theme.colour}}",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/?standalone",
+    "developer": {
+        "name": "{{kurt.name}}",
+        "url": "{{kurt.website}}",
+    },
+    "icons": [
+        {{#each images.manifest as |img index|}}
+        {{#if @index}},{{/if}}
+        {
+            "src": "{{rootUrl}}{{img.path}}",
+            "sizes": "{{img.size}}",
+            "type": "image/png"
+        }
+    {{/each}}
+    ]
+}

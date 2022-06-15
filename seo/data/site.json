@@ -1,5 +1,5 @@
 {
-    "rootUrl": "https://nmsassistant.com",
+    "rootUrl": "https://nmscd.github.io/Community-Search/",
     "kurt": {
         "name": "Kurt Lourens",
         "email": "mailto:hi@kurtlourens.com",
@@ -10,9 +10,15 @@
         "location": "Almere, The Netherlands"
     },
     "meta": {
-        "appName": "Assistant for No Man's Sky",
-        "title": "Assistant for No Man's Sky",
-        "description": "Available on the Google Play and Apple App Store. Get Crafting, Refining and Cooking Recipes for the game No Man&#39;s Sky!!"
+        "title": "No Man's Sky Community Search - NMSCD",
+        "appName": "NMS Community Search",
+        "description": "One site to search through all of the amazing No man's Sky communities and tools!",
+        "mailto": "mailto:support@nmsassistant.com"
+    },
+    "theme": {
+        "colour": "#00FFFF",
+        "maskColour": "#00FFFF",
+        "appleStatusBar": "#00FFFF"
     },
     "twitter": {
         "handle": "@AssistantNMS",
@@ -21,12 +27,58 @@
     },
     "assistantApps": {
         "rootUrl": "https://assistantapps.com",
-        "appName": "Assistant Apps",
-        "title": "Assistant Apps by Kurt Lourens",
-        "description": "Home page of the Assistant Apps. Get the apps on Google Play, Apple App Store and on the web",
-        "version": "1.0.26",
+        "name": "Assistant Apps",
+        "twitter": "@AssistantNMS",
         "favicon": {
             "x192": "assets/favicon/android-icon-192x192.png"
         }
-    }
+    },
+    "images": {
+        "maskIcon": "/safari-pinned-tab.svg",
+        "favicon": {
+            "ico": "/favicon.ico",
+            "x16": "/assets/favicon/favicon-16x16.png",
+            "x32": "/assets/favicon/favicon-32x32.png",
+            "x96": "/assets/favicon/favicon-96x96.png",
+            "x196": "assets/favicon/favicon-196x196.png"
+        },
+        "manifest": [
+            {
+                "size": "512x512",
+                "path": "assets/favicon/android-chrome-512x512.png"
+            },
+            {
+                "size": "192x192",
+                "path": "assets/favicon/android-chrome-192x192.png"
+            },
+            {
+                "size": "150x150",
+                "path": "assets/favicon/mstile-150x150.png"
+            },
+            {
+                "size": "32x32",
+                "path": "assets/favicon/favicon-32x32.png"
+            }
+        ],
+        "twitter": "https://www.mugshotbot.com/m?mode=dark&color=red&pattern=bubbles&url=https://nmscd.github.io/Community-Search/",
+        "facebook": "https://www.mugshotbot.com/m?mode=dark&color=red&pattern=bubbles&url=https://nmscd.github.io/Community-Search/"
+    },
+    "headers": [
+        {
+            "name": "Set-Cookie",
+            "value": "cross-site-cookie=name; SameSite=None; Secure"
+        },
+        {
+            "name": "X-Clacks-Overhead",
+            "value": "GNU Eddison the Magic Doggo"
+        },
+        {
+            "name": "Clacks-Overhead",
+            "value": "GNU Eddison the Magic Doggo"
+        },
+        {
+            "name": "X-Powered-by",
+            "value": "Magic &amp; the Distraction Squad"
+        }
+    ]
 }

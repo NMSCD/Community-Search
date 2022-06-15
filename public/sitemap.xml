@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>{{rootUrl}}</loc>
-        <lastmod>{{date}}</lastmod>
+        <loc>https://nmscd.github.io/Community-Search/</loc>
+        <lastmod>2022-06-15</lastmod>
     </url>
 </urlset>

@@ -37,3 +37,8 @@ For SEO we use HandlebarJS to template out the documents and generate as many fi
 ## Deployment
 
 This site makes use of Github Actions to build the project and Github Pages to host it 💪
+
+
+<!-- Links used in the page -->
+
+[nmscd]: https://github.com/NMSCD?ref=nmscdCommunitySearch

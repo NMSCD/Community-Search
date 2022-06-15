@@ -14,15 +14,13 @@ async function generateFullJson() {
         ((opt.values != null && opt.values.length > 0) ? ' ' : '') +
         opt.values.join(' ')
     );
-    let header = headerList.join('; ') + ';';
-
-    // Disable this to get CSP
-    header = [];
+    const header = headerList.join('; ') + ';';
 
     const siteDataFull = {
         ...siteData,
         headers: [
-            ...cspContent.headers.map(csp => ({ "name": csp, "value": header })),
+            // Enable the line below to get CSP
+            // ...cspContent.headers.map(csp => ({ "name": csp, "value": header })),
             ...siteData.headers,
         ]
     };

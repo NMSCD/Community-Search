@@ -1,8 +1,8 @@
+<div align="center">
+
 ## 🔍 NMS Community Search
 
 This project aims to be the "Yellow pages" of the NMS community. Our goal is to document the different Communities, tools, resources, builders and creators.
-
-<div align="center">
 
   ![madeWithLove](./.github/badges/made-with-love.svg)
   [![Supported by the No Man's Sky Community Developers & Designers](https://raw.githubusercontent.com/NMSCD/About/master/badge/purple-ftb.svg)][nmscd] 

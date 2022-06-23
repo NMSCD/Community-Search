@@ -2,7 +2,6 @@ import { Box, Container, Divider, Flex, Heading, Input, Modal, ModalOverlay, Sel
 import { Component, createMemo, createSignal, For } from 'solid-js';
 import communityList from '../assets/data/communityList.json';
 import manualList from '../assets/data/manualCommunityList.json';
-import { getTagColour } from '../constants/airTable';
 import { themeColours } from '../constants/colour';
 import { CommunityListItem } from '../contracts/communityList';
 import { CommunityAddLink } from './community/communityAddLink';
@@ -95,7 +94,7 @@ export const CommunityItems: Component = () => {
                                     <For each={allTags}>
                                         {tag => (
                                             <SelectOption class="community-tags" value={tag}>
-                                                <SelectOptionText class="chip" style={{ "background-color": getTagColour(tag) }}>{tag}</SelectOptionText>
+                                                <SelectOptionText class={'chip ' + tag}>{tag}</SelectOptionText>
                                                 <SelectOptionIndicator />
                                             </SelectOption>
                                         )}

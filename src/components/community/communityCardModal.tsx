@@ -1,7 +1,5 @@
 import { Box, Button, Center, Flex, Image, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, Text } from '@hope-ui/solid';
 import { Component, For, Match, Show, Switch } from 'solid-js';
-import { Slider, SliderButton, SliderProvider } from "solid-slider";
-import { getTagColour } from '../../constants/airTable';
 import { CommunityListItem } from '../../contracts/communityList';
 import { BasicLink } from '../common/link';
 import { CommunityBannerSlider } from './communityBannerSlider';

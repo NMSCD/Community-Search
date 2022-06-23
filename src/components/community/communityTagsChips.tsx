@@ -1,6 +1,5 @@
 import { SelectTagCloseButton } from '@hope-ui/solid';
 import { Component, For, Show } from 'solid-js';
-import { getTagColour } from '../../constants/airTable';
 
 interface IProps {
     tags: Array<string>;
@@ -13,7 +12,7 @@ export const CommunityTagsChips: Component<IProps> = (props: IProps) => {
         <div class="community-tags">
             <For each={props.tags}>
                 {tag => (
-                    <span class="chip" style={{ "background-color": getTagColour(tag) }}>
+                    <span class={'chip ' + tag}>
                         {tag}
                         <Show when={props.removeTag != null}>
                             <SelectTagCloseButton onClick={() => props.removeTag?.(tag)} />

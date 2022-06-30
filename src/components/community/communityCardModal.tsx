@@ -14,18 +14,36 @@ interface IProps {
 export const CommunityCardModal: Component<IProps> = (props: IProps) => {
 
     const renderSingleLink = (link: string) => {
+        let localLink = link;
+        let cleanLink = 'Unsupported link';
+        let linkComment = '';
+
+        const markdownLinkRegex = new RegExp(/^\[(.+)\]\((.+)\)/);
+        const markdownRegexArr = markdownLinkRegex.exec(link);
+        if ((markdownRegexArr?.length ?? 0) > 2) {
+            linkComment = `(${markdownRegexArr![1]})`;
+            localLink = markdownRegexArr![2]
+        }
+
         const linkRegex = new RegExp('^(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/?\n]+)');
-        const preCleanLink = link
+        const preCleanLink = localLink
             .replaceAll('https://', '')
             .replaceAll('http://', '')
             // .replaceAll('www.', '')
             .replaceAll('/index.html', '')
             .replaceAll('.html', '');
         const regexArr = linkRegex.exec(preCleanLink);
-        const cleanLink = ((regexArr?.length ?? 0) > 0) ? regexArr![0] : 'test:' + preCleanLink;
+        cleanLink = ((regexArr?.length ?? 0) > 0) ? regexArr![0] : 'test:' + preCleanLink;
+
         return (
             <li style={{ maxWidth: '100%' }}>
-                <BasicLink href={link} title={props.item.name} additionalClassNames="max-lines-1">{cleanLink}</BasicLink>
+                <BasicLink href={localLink} title={props.item.name} additionalClassNames="max-lines-1">
+                    <span>{cleanLink}</span>
+                    {
+                        (linkComment.length > 0) &&
+                        <span class="comment">{linkComment}</span>
+                    }
+                </BasicLink>
             </li>
         );
     }

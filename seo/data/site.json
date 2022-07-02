@@ -1,5 +1,5 @@
 {
-    "rootUrl": "https://nmscd.github.io/Community-Search/",
+    "rootUrl": "https://community.nmscd.com",
     "kurt": {
         "name": "Kurt Lourens",
         "email": "mailto:hi@kurtlourens.com",
@@ -60,8 +60,8 @@
                 "path": "assets/favicon/favicon-32x32.png"
             }
         ],
-        "twitter": "https://www.mugshotbot.com/m?mode=dark&color=red&pattern=bubbles&url=https://nmscd.github.io/Community-Search/",
-        "facebook": "https://www.mugshotbot.com/m?mode=dark&color=red&pattern=bubbles&url=https://nmscd.github.io/Community-Search/"
+        "twitter": "https://www.mugshotbot.com/m?mode=dark&color=red&pattern=bubbles&url=https://community.nmscd.com",
+        "facebook": "https://www.mugshotbot.com/m?mode=dark&color=red&pattern=bubbles&url=https://community.nmscd.com"
     },
     "headers": [
         {

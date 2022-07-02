@@ -1,10 +1,17 @@
 .hope-modal__content {
     a {
         display: inline;
+
         .comment {
             color: grey;
             font-style: italic;
             margin-left: 7px;
         }
+    }
+}
+
+.hope-modal__body {
+    img {
+        border-radius: 5px;
     }
 }

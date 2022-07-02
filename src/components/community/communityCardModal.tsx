@@ -29,7 +29,7 @@ export const CommunityCardModal: Component<IProps> = (props: IProps) => {
         const preCleanLink = localLink
             .replaceAll('https://', '')
             .replaceAll('http://', '')
-            // .replaceAll('www.', '')
+            .replaceAll('www.', '')
             .replaceAll('/index.html', '')
             .replaceAll('.html', '');
         const regexArr = linkRegex.exec(preCleanLink);

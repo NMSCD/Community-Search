@@ -1,6 +1,5 @@
 import { Box } from '@hope-ui/solid';
 import type { Component } from 'solid-js';
-import { Footer } from './components/common/footer';
 import { Header } from './components/common/header';
 import { CommunityItems } from './components/communityItems';
 

@@ -10,9 +10,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     strategy:
       matrix:
         node-version: [16.x]
+        
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -20,6 +22,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        
     - run: cd seo
     - run: npm ci
     - run: npm run build
@@ -27,9 +30,9 @@ jobs:
     - run: npm ci
     - run: npm run build
     
-    - name: Upload a Build Artifact    
-      uses: actions/upload-artifact@v3.1.0
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.3.4
       with:
-        path: './dist'
+        folder: dist # The folder the action should deploy.
         
     

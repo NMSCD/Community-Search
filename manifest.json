@@ -1,0 +1,43 @@
+{
+    "name": "No Man's Sky Community Search - NMSCD",
+    "short_name": "NMS Community Search",
+    "description": "One site to search through all of the amazing No man&#x27;s Sky communities and tools!",
+    "lang": "en-US",
+    "manifest_version": 2,
+    "version": "1.0.0",
+    "background_color": "#1b1f22",
+    "theme_color": "#00FFFF",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/?standalone",
+    "developer": {
+        "name": "Kurt Lourens",
+        "url": "https://kurtlourens.com",
+    },
+    "icons": [
+        
+        {
+            "src": "assets/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+        ,
+        {
+            "src": "assets/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+        ,
+        {
+            "src": "assets/favicon/mstile-150x150.png",
+            "sizes": "150x150",
+            "type": "image/png"
+        }
+        ,
+        {
+            "src": "assets/favicon/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ]
+}

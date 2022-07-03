@@ -1,4 +1,4 @@
-.community-cards {
+#main .community-cards {
     padding: 4em 5em;
     max-width: calc(100vw - 8em);
     background-color: rgba(65, 65, 65, 0.9);
@@ -7,14 +7,17 @@
         padding: 4em;
         max-width: calc(100vw - 6em);
     }
+
     @media only screen and (max-width: 1200px) {
         padding: 3em 4em;
         max-width: calc(100vw - 4em);
     }
+
     @media only screen and (max-width: 950px) {
         padding: 2em;
         max-width: calc(100vw - 2em);
     }
+
     @media only screen and (max-width: 700px) {
         padding: 1em;
         max-width: calc(100vw - 2em);
@@ -24,12 +27,15 @@
         @media only screen and (max-width: 1500px) {
             grid-template-columns: repeat(4, minmax(0px, 1fr));
         }
+
         @media only screen and (max-width: 1200px) {
             grid-template-columns: repeat(3, minmax(0px, 1fr));
         }
+
         @media only screen and (max-width: 950px) {
             grid-template-columns: repeat(2, minmax(0px, 1fr));
         }
+
         @media only screen and (max-width: 500px) {
             grid-template-columns: repeat(1, minmax(0px, 1fr));
         }
@@ -143,9 +149,11 @@
 .hope-select__trigger {
     .community-tags {
         display: inline-block;
+
         .chip {
             padding-right: 1.5em;
             position: relative;
+
             .hope-select__tag-close-button {
                 position: absolute;
                 top: 50%;
@@ -153,6 +161,7 @@
                 display: inline-block;
                 transform: translateY(-50%);
                 border-radius: 1em;
+
                 &:hover {
                     background-color: rgba(255, 255, 255, 0.5);
                 }

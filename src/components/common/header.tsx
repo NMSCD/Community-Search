@@ -3,6 +3,7 @@ import type { Component } from 'solid-js';
 import { HamburgerIcon } from '../icon/hamburgerIcon';
 import { BasicLink } from './link';
 import { site } from '../../constants/site';
+import packageJson from '../../../package.json';
 
 export const Header: Component = () => {
     const { isOpen, onOpen, onClose } = createDisclosure();
@@ -47,7 +48,7 @@ export const Header: Component = () => {
                     </DrawerBody>
                     <DrawerFooter>
                         <p style="text-align: right">
-                            <span>v1.0.2</span><br />
+                            <span>v{packageJson.version}</span><br />
                             Built by <BasicLink href={site.assistantNMS.website} title={site.assistantNMS.nickName}>{site.assistantNMS.nickName}</BasicLink>
                         </p>
                     </DrawerFooter>

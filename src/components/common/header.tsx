@@ -1,6 +1,8 @@
-import { Box, Center, createDisclosure, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Flex, Heading, Image } from '@hope-ui/solid';
+import { Box, Center, createDisclosure, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Flex, Heading, Image } from '@hope-ui/solid';
 import type { Component } from 'solid-js';
 import { HamburgerIcon } from '../icon/hamburgerIcon';
+import { BasicLink } from './link';
+import { site } from '../../constants/site';
 
 export const Header: Component = () => {
     const { isOpen, onOpen, onClose } = createDisclosure();
@@ -36,10 +38,19 @@ export const Header: Component = () => {
                 <DrawerContent>
                     <DrawerCloseButton />
                     <DrawerHeader>Menu</DrawerHeader>
-
                     <DrawerBody>
-
+                        <br />
+                        <p>-&nbsp;<BasicLink href={site.nmscd.website} title={site.nmscd.nickName}>{`${site.nmscd.nickName} homepage`}</BasicLink></p>
+                        <p>-&nbsp;<BasicLink href={site.nmscd.projectsPage} title={`${site.nmscd.nickName} projects`}>{`Other ${site.nmscd.nickName} projects`}</BasicLink></p>
+                        <p>-&nbsp;<BasicLink href={site.nmscd.github} title={`${site.nmscd.nickName} Github Org`}>{`${site.nmscd.nickName} Github Organisation`}</BasicLink></p>
+                        <br />
                     </DrawerBody>
+                    <DrawerFooter>
+                        <p style="text-align: right">
+                            <span>v1.0.2</span><br />
+                            Built by <BasicLink href={site.assistantNMS.website} title={site.assistantNMS.nickName}>{site.assistantNMS.nickName}</BasicLink>
+                        </p>
+                    </DrawerFooter>
                 </DrawerContent>
             </Drawer>
         </Box>

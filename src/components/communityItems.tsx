@@ -1,7 +1,6 @@
 import { Box, Container, Divider, Flex, Heading, Input, Modal, ModalOverlay, Select, SelectContent, SelectIcon, SelectListbox, SelectOption, SelectOptionIndicator, SelectOptionText, SelectPlaceholder, SelectTagCloseButton, SelectTrigger, SelectValue, SimpleGrid, Text } from '@hope-ui/solid';
 import { Component, createMemo, createSignal, For } from 'solid-js';
 import communityList from '../assets/data/communityList.json';
-import manualList from '../assets/data/manualCommunityList.json';
 import { themeColours } from '../constants/colour';
 import { CommunityListItem } from '../contracts/communityList';
 import { CommunityAddLink } from './community/communityAddLink';
@@ -15,12 +14,8 @@ export const CommunityItems: Component = () => {
     const [selectedTags, setSelectedTags] = createSignal<Array<string>>();
     const [selectedItem, setSelectedItem] = createSignal<CommunityListItem>();
 
-    const combinedCommunityList: Array<CommunityListItem> = [
-        ...manualList,
-        ...communityList
-    ];
     const allTags = [...new Set(communityList.flatMap(ci => ci.tags))];
-    const sortedCommunityList = combinedCommunityList.sort(function (a, b) {
+    const sortedCommunityList = communityList.sort(function (a, b) {
         const textA = a.name.toUpperCase();
         const textB = b.name.toUpperCase();
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;

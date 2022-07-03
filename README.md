@@ -16,7 +16,7 @@ This project aims to be the "Yellow pages" of the NMS community. Our goal is to 
 There are currently two methods of submitting Community Links:
 - **Easy method**: Complete this form [airtable.com/shrhZOQrrp9a9zoJk](https://airtable.com/shrhZOQrrp9a9zoJk?ref=nmscdCommunitySearchReadMe)
   - We will look at your application and move it to the public data if it meets our requirements.
-- **Developer method**: You can add your community link to the [manualCommunityList.json](/src/assets/data/manualCommunityList.json) and then create a pull request.
+- **Developer method**: You can add your community link to the [manualCommunityList.json](/seo/data/manualCommunityList.json) and then create a pull request.
   - Please be sure to use urls to images that are publicly available (test your images in incognito mode)
 
 If your Community Link does not show up on the site after a day or two, feel free to contact the [AssistantNMS support email](mailto:support@nmsassistant.com). Multiple members have access to the support system that monitors that email address. OR you can open an issue in this repository.

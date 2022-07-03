@@ -3,9 +3,9 @@
   <ShortName>No Man&#x27;s Sky Community Search - NMSCD</ShortName>
   <Description>One site to search through all of the amazing No man&#x27;s Sky communities and tools!</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://nmscd.github.io/Community-Search//favicon.ico</Image>
-  <Url type="text/html" template="https://nmscd.github.io/Community-Search/?q={searchTerms}">
+  <Image width="16" height="16" type="image/x-icon">https://community.nmscd.com/favicon.ico</Image>
+  <Url type="text/html" template="https://community.nmscd.com?q={searchTerms}">
     <Param name="searchTerms" value="{searchTerms}" />
   </Url>
-  <Url type="application/x-suggestions+json" template="https://nmscd.github.io/Community-Search/?q={searchTerms}" />
+  <Url type="application/x-suggestions+json" template="https://community.nmscd.com?q={searchTerms}" />
 </OpenSearchDescription>

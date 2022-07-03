@@ -9,6 +9,7 @@ const tables = {
         name: 'Main',
         view: 'VisibleCommunities',
         json: 'communityList.json',
+        addititionalJson: 'manualCommunityList.json',
         records: [
             {
                 source: 'Name',
@@ -104,8 +105,16 @@ async function generateJsonFromAirtable() {
                 console.error({ err });
                 return;
             }
-            console.log('write file ' + allItems.length);
-            fs.writeFile(`../src/assets/data/${currentTable.json}`, JSON.stringify(allItems), ['utf8'], () => { });
+
+            let allData = [...allItems];
+            if (currentTable.addititionalJson != null) {
+                const manualString = fs.readFileSync(`./data/${currentTable.addititionalJson}`, { encoding: 'utf8' });
+                const manual = JSON.parse(manualString);
+                allData = [...allItems, ...manual];
+            }
+
+            console.log('write file ' + allData.length);
+            fs.writeFile(`../src/assets/data/${currentTable.json}`, JSON.stringify(allData), ['utf8'], () => { });
         });
     }
 }

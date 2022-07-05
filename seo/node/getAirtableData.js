@@ -110,7 +110,20 @@ async function generateJsonFromAirtable() {
             if (currentTable.addititionalJson != null) {
                 const manualString = fs.readFileSync(`./data/${currentTable.addititionalJson}`, { encoding: 'utf8' });
                 const manual = JSON.parse(manualString);
-                allData = [...allItems, ...manual];
+
+                for (const manualItem of manual) {
+                    let found = false;
+                    for (let allDataIndex = 0; allDataIndex < allData.length; allDataIndex++) {
+                        const allDataItem = allData[allDataIndex];
+                        if (allDataItem.id != manualItem.id) continue;
+                        allData[allDataIndex] = { ...manualItem };
+                        found = true;
+                    }
+                    if (found == false) {
+                        allData.push({ ...manualItem });
+                    }
+                }
+
             }
 
             console.log('write file ' + allData.length);

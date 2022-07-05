@@ -23,12 +23,16 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         
-    - run: cd seo
-    - run: npm ci
-    - run: npm run build
-    - run: cd ..
-    - run: npm ci
-    - run: npm run build
+    - name: Build all the data
+      run: |
+        cd seo
+        npm ci
+        npm run build
+        
+    - name: Build JS
+      run: |
+        npm ci
+        npm run build
     
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.3.4

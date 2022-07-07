@@ -6,7 +6,7 @@ import { CommunityListItem } from '../contracts/communityList';
 import { CommunityAddLink } from './community/communityAddLink';
 import { CommunityCard } from './community/communityCard';
 import { CommunityCardModal } from './community/communityCardModal';
-import { CommunityTagsChips } from './community/communityTagsChips';
+import { CommunityTagsChips, getChipColour } from './community/communityTagsChips';
 
 
 export const CommunityItems: Component = () => {
@@ -89,7 +89,7 @@ export const CommunityItems: Component = () => {
                                     <For each={allTags}>
                                         {tag => (
                                             <SelectOption class="community-tags" value={tag}>
-                                                <SelectOptionText class={'chip ' + tag}>{tag}</SelectOptionText>
+                                                <SelectOptionText class={'chip ' + tag} style={getChipColour(tag)}>{tag}</SelectOptionText>
                                                 <SelectOptionIndicator />
                                             </SelectOption>
                                         )}

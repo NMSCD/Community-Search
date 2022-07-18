@@ -8,6 +8,7 @@
     "data:airtable": "node ./node/getAirtableData.js",
     "seo": "npm-run-all --sequential seo:*",
     "seo:combine": "node ./node/getRequiredData.js",
+    "seo:generate-meta-pages": "node ./node/generateSeoPages.js",
     "seo:generate-other": "node ./node/generateOtherFiles.js"
   },
   "homepage": "https://nmsassistant.com",

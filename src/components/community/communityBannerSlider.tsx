@@ -1,5 +1,5 @@
 import { Box, Center, Image, Spinner } from '@hope-ui/solid';
-import { Component, For, Show } from 'solid-js';
+import { Component, createSignal, For, onMount, Show } from 'solid-js';
 import { createSlider } from 'solid-slider';
 
 interface IProps {
@@ -8,6 +8,7 @@ interface IProps {
 }
 
 export const CommunityBannerSlider: Component<IProps> = (props: IProps) => {
+    const [isVisible, setIsVisible] = createSignal<boolean>(true);
     const [
         slider,
         {
@@ -18,11 +19,19 @@ export const CommunityBannerSlider: Component<IProps> = (props: IProps) => {
         { loop: true },
     );
 
+    onMount(() => {
+        setTimeout(() => {
+            setIsVisible(false);
+        }, 1000);
+    });
+
     return (
         <Box class="slider-container">
-            <Center class="slider-loader">
-                <Spinner size="lg" />
-            </Center>
+            <Show when={isVisible()}>
+                <Center class="slider-loader">
+                    <Spinner size="lg" />
+                </Center>
+            </Show>
             <div use:slider>
                 <For each={props.banners}>
                     {banner => (
@@ -43,3 +52,7 @@ export const CommunityBannerSlider: Component<IProps> = (props: IProps) => {
         </Box>
     );
 };
+
+function useEffect(arg0: () => void) {
+    throw new Error('Function not implemented.');
+}

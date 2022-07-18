@@ -72,6 +72,26 @@
     <link rel="preload" as="image" href="/assets/img/loader.svg">
 
     <link rel="stylesheet" href="/assets/css/noscript.css">
+    <style>
+        .full-page-loader {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background-color: #333333;
+        }
+
+        .full-page-loader img {
+            width: 200px;
+        }
+    </style>
 
     <script type="application/ld+json">
         {
@@ -84,8 +104,8 @@
             "image": "assets/img/logo.png",
             "applicationCategory": "Application",
             "operatingSystem": "Android Lollipop, iOS, Chrome, Firefox, Opera, Internet Explorer, Edge",
-            "softwareVersion": "0.0.12",
-            "version": "0.0.12",
+            "softwareVersion": "0.0.14",
+            "version": "0.0.14",
             "author": {
                 "@type": "Person",
                 "name": "Kurt Lourens",
@@ -114,7 +134,7 @@
                 "priceCurrency": "USD",
                 "name": "No Man&#x27;s Sky Community Search - NMSCD",
                 "url": "https://community.nmscd.com",
-                "image": "assets/images/icon.png",
+                "image": "assets/img/logo.png",
                 "description": ""
             },
             "inLanguage": "en",
@@ -137,6 +157,9 @@
                 <h2>Galactic Hub Eissentam</h2>
                 <h5>Expansion of the Galactic Hub Project community into the 10th galaxy</h5>
             </div>
+        </div>
+        <div class="full-page-loader">
+            <img src="/assets/img/loader.svg" draggable="false" alt="loading-animation" />
         </div>
     </div>
     <script>

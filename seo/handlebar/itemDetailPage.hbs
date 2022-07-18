@@ -72,6 +72,26 @@
     <link rel="preload" as="image" href="/assets/img/loader.svg">
 
     <link rel="stylesheet" href="/assets/css/noscript.css">
+    <style>
+        .full-page-loader {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background-color: #333333;
+        }
+
+        .full-page-loader img {
+            width: 200px;
+        }
+    </style>
 
     {{!-- JSON-LD --}}
     <script type="application/ld+json">
@@ -115,7 +135,7 @@
                 "priceCurrency": "USD",
                 "name": "{{meta.title}}",
                 "url": "{{rootUrl}}",
-                "image": "assets/images/icon.png",
+                "image": "assets/img/logo.png",
                 "description": "{{meta.desc}}"
             },
             "inLanguage": "en",
@@ -138,6 +158,9 @@
                 <h2>{{data.name}}</h2>
                 <h5>{{data.desc}}</h5>
             </div>
+        </div>
+        <div class="full-page-loader">
+            <img src="/assets/img/loader.svg" draggable="false" alt="loading-animation" />
         </div>
     </div>
     <script>

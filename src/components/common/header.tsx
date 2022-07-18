@@ -17,10 +17,10 @@ export const Header: Component = () => {
             borderBottomRightRadius="15px"
         >
             <Flex>
-                <Center pl="1em">
+                <Center pl="1em" className="noselect">
                     <Image boxSize="75px" padding="0.5em" src="/assets/img/logo.png" />
                 </Center>
-                <Box pl="1em" flex="1">
+                <Box pl="1em" flex="1" className="noselect">
                     <Center height="100%">
                         <Heading level={1} size="3xl">NMS Community Search</Heading>
                     </Center>
@@ -36,7 +36,7 @@ export const Header: Component = () => {
                 onClose={onClose}
             >
                 <DrawerOverlay />
-                <DrawerContent>
+                <DrawerContent class="noselect">
                     <DrawerCloseButton />
                     <DrawerHeader>Menu</DrawerHeader>
                     <DrawerBody>

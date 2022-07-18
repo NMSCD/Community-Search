@@ -44,6 +44,10 @@ const tables = {
                 mapping: (v) => v.split(',').filter(item => item?.length > 0),
             },
             {
+                source: 'CustomId',
+                target: 'customId',
+            },
+            {
                 source: 'Sort',
                 target: 'sort',
             }

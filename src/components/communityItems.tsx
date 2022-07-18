@@ -52,7 +52,7 @@ export const CommunityItems: Component = () => {
 
     return (
         <Box id="main" pb="10em">
-            <Container pt="10em" pb="5em">
+            <Container pt="10em" pb="5em" className="noselect">
                 <div class="background-bg"></div>
                 <div class="background star1"></div>
                 <div class="background star2"></div>
@@ -69,11 +69,11 @@ export const CommunityItems: Component = () => {
                 zIndex={1}
             >
                 <Flex color="white" mb="1em">
-                    <Box flex="7">
+                    <Box flex="7" className="noselect">
                         <Input placeholder="Search" value={searchText()} onInput={(e: any) => setSearchText(e?.target?.value)} />
                     </Box>
                     <Box ml="10px" />
-                    <Box flex="5">
+                    <Box flex="5" className="noselect">
                         <Select multiple={true} value={selectedTags()} onChange={value => setSelectedTags(value)}>
                             <SelectTrigger>
                                 <SelectPlaceholder>Tags to show</SelectPlaceholder>

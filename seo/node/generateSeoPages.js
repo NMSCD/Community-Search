@@ -33,7 +33,10 @@ async function generateItemPage() {
             data: { ...commListItem }
         };
         const html = templateFunc(templateData);
-        fs.writeFile(`../public/short/${commListItem.id}.html`, html, ['utf8'], () => { });
+        const fileName = (commListItem.customId != null && commListItem.customId.length > 0)
+            ? commListItem.customId
+            : commListItem.id;
+        fs.writeFile(`../public/short/${fileName}.html`, html, ['utf8'], () => { });
     }
 }
 

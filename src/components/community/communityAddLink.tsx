@@ -8,7 +8,7 @@ interface IProps {
 export const CommunityAddLink: Component<IProps> = (props: IProps) => {
 
     return (
-        <BasicLink id="container-floating" href={submitCommunitySearchItem}>
+        <BasicLink id="container-floating" href={submitCommunitySearchItem} additionalClassNames="noselect">
             <div id="floating-button">
                 <p class="plus">+</p>
             </div>

@@ -1,7 +1,6 @@
-import { HopeProvider, HopeThemeConfig } from '@hope-ui/solid';
-import { Component, createEffect, JSX, onMount } from 'solid-js';
+import { HopeProvider, HopeThemeConfig, NotificationsProvider } from '@hope-ui/solid';
+import { Component, JSX } from 'solid-js';
 import { themeColours } from './constants/colour';
-import { setChakraToDarkMode } from './helper/documentHelper';
 
 interface IProps {
   children: JSX.Element;
@@ -26,7 +25,9 @@ export const CustomThemeProvider: Component<IProps> = (props: IProps) => {
 
   return (
     <HopeProvider config={config}>
-      {props.children}
+      <NotificationsProvider placement="top-end">
+        {props.children}
+      </NotificationsProvider>
     </HopeProvider>
   );
 }

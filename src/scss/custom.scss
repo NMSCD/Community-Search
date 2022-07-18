@@ -11,6 +11,18 @@
 body {
     background-color: rgb(50, 50, 50);
 
+    ::selection {
+        background: #662954;
+        color: white;
+        /* WebKit/Blink Browsers */
+    }
+
+    ::-moz-selection {
+        background: #662954;
+        color: white;
+        /* Gecko Browsers */
+    }
+
     a {
         color: $linkColour;
     }

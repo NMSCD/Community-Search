@@ -52,7 +52,3 @@ export const CommunityBannerSlider: Component<IProps> = (props: IProps) => {
         </Box>
     );
 };
-
-function useEffect(arg0: () => void) {
-    throw new Error('Function not implemented.');
-}

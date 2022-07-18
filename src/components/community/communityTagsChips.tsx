@@ -12,7 +12,7 @@ export const CommunityTagsChips: Component<IProps> = (props: IProps) => {
         <div class="community-tags">
             <For each={props.tags}>
                 {tag => (
-                    <span class={'chip ' + tag} style={getChipColour(tag)}>
+                    <span class={'chip noselect ' + tag} style={getChipColour(tag)}>
                         {tag}
                         <Show when={props.removeTag != null}>
                             <SelectTagCloseButton onClick={() => props.removeTag?.(tag)} />

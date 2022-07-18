@@ -1,6 +1,6 @@
 import { Box, Center } from '@hope-ui/solid';
 import classNames from 'classnames';
-import { Component, For, Show } from 'solid-js';
+import { Component } from 'solid-js';
 import { CommunityListItem } from '../../contracts/communityList';
 import { CommunityTagsChips } from './communityTagsChips';
 
@@ -12,7 +12,7 @@ interface IProps {
 export const CommunityCard: Component<IProps> = (props: IProps) => {
 
     return (
-        <Box class="community-card-bg" onClick={() => props.openModal()}>
+        <Box class="community-card-bg noselect" onClick={() => props.openModal()}>
             <Box class={classNames('community-card', { 'pointer': props.item.links?.length > 0 })}>
                 <div class="community-top">
                     <div class="community-icon">

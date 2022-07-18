@@ -1,4 +1,4 @@
-import { Box, Button, Center, Flex, Image, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, Text } from '@hope-ui/solid';
+import { Box, Button, Center, Flex, Image, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, Text, notificationService } from '@hope-ui/solid';
 import { Component, For, Match, Show, Switch } from 'solid-js';
 import { CommunityListItem } from '../../contracts/communityList';
 import { BasicLink } from '../common/link';
@@ -48,11 +48,28 @@ export const CommunityCardModal: Component<IProps> = (props: IProps) => {
         );
     }
 
+    const getShareableLink = () => {
+        const fileName = (props.item.customId != null && props.item.customId.length > 0)
+            ? props.item.customId
+            : props.item.id;
+
+        const shareableUrl = `https://community.nmscd.com/link/${fileName}.html`;
+
+        navigator?.clipboard?.writeText?.(shareableUrl)?.then?.(() => {
+            notificationService.show({
+                status: 'info',
+                title: 'Link copied',
+                description: shareableUrl,
+                duration: 5000,
+            });
+        });
+    }
+
     const numBanners = props.item.banners?.length ?? 0;
     return (
         <ModalContent>
             <ModalCloseButton />
-            <ModalHeader>
+            <ModalHeader className="noselect">
                 <Flex>
                     <Image src={props.item.icon} alt={props.item.name + ' banner'} borderRadius="3px" width="25px" mr="10px" />
                     <Center flex="1">
@@ -61,28 +78,35 @@ export const CommunityCardModal: Component<IProps> = (props: IProps) => {
                 </Flex>
             </ModalHeader>
             <ModalBody>
-                <Switch>
-                    <Match when={numBanners > 0}>
-                        <CommunityBannerSlider
-                            name={props.item.name}
-                            banners={props.item.banners!}
-                        />
-                    </Match>
-                    <Match when={numBanners <= 0}>
+                <Box className="banner noselect">
+                    <Switch>
+                        <Match when={numBanners > 0}>
+                            <CommunityBannerSlider
+                                name={props.item.name}
+                                banners={props.item.banners!}
+                            />
+                        </Match>
+                        <Match when={numBanners <= 0}>
+                            <Center>
+                                <Image src={props.item.icon} alt={props.item.name + ' icon'} maxHeight="100px" />
+                            </Center>
+                        </Match>
+                    </Switch>
+                    <Box className="actions">
                         <Center>
-                            <Image src={props.item.icon} alt={props.item.name + ' icon'} maxHeight="100px" />
+                            <Image src="/assets/img/share.svg" alt="share" onClick={getShareableLink} />
                         </Center>
-                    </Match>
-                </Switch>
+                    </Box>
+                </Box>
                 <Show when={props.item.desc != null}>
-                    <Box pt="1em">
-                        <small>Description:</small>
+                    <Box pt="0.5em">
+                        <small class="noselect">Description:</small>
                         <p>{props.item.desc}</p>
                     </Box>
                 </Show>
                 <Show when={(props.item.links?.length ?? 0) > 0}>
                     <Box pt="1em">
-                        <small>Links:</small>
+                        <small class="noselect">Links:</small>
                         <Box pl="1.5em">
                             <ul>
                                 <For each={props.item.links}>
@@ -93,7 +117,7 @@ export const CommunityCardModal: Component<IProps> = (props: IProps) => {
                     </Box>
                 </Show>
                 <Box pt="1em">
-                    <small>Tags:</small>
+                    <small class="noselect">Tags:</small>
                     <CommunityTagsChips tags={props.item.tags} />
                 </Box>
             </ModalBody>

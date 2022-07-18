@@ -8,5 +8,6 @@ export interface CommunityListItem {
     sort?: number;
     desc?: string;
     group?: string;
+    customId?: string;
     children?: Array<CommunityListItem>;
 }

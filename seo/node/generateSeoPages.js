@@ -36,7 +36,7 @@ async function generateItemPage() {
         const fileName = (commListItem.customId != null && commListItem.customId.length > 0)
             ? commListItem.customId
             : commListItem.id;
-        fs.writeFile(`../public/short/${fileName}.html`, html, ['utf8'], () => { });
+        fs.writeFile(`../public/link/${fileName}.html`, html, ['utf8'], () => { });
     }
 }
 

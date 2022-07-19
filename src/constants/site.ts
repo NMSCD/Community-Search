@@ -26,6 +26,7 @@ export const site = {
         website: 'http://www.nmscd.com',
         github: 'https://github.com/NMSCD',
         projectsPage: 'http://www.nmscd.com/projects.html',
+        communitySearchGitRepo: 'https://github.com/NMSCD/Community-Search',
     },
     assistantApps: {
         name: 'AssistantApps',

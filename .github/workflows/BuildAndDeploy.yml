@@ -23,6 +23,14 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         
+    - name: Setup Secrets
+      env:
+        AIRTABLE_APIKEY: ${{ secrets.AIRTABLE_APIKEY }}
+      run: |
+        cd seo
+        touch .env
+        echo AIRTABLE_API_KEY="$AIRTABLE_APIKEY" >> .env
+        
     - name: Build all the data
       run: |
         cd seo

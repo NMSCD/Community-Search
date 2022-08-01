@@ -71,7 +71,7 @@ export const CommunityCardModal: Component<IProps> = (props: IProps) => {
             <ModalCloseButton />
             <ModalHeader className="noselect">
                 <Flex>
-                    <Image src={props.item.icon} alt={props.item.name + ' banner'} borderRadius="3px" width="25px" mr="10px" />
+                    <Image src={props.item.icon} alt={props.item.name + ' banner'} borderRadius="3px" height="25px" width="25px" mr="10px" />
                     <Center flex="1">
                         <Text textAlign="left" width="100%">{props.item.name}</Text>
                     </Center>

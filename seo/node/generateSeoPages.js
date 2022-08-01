@@ -11,6 +11,18 @@ const versionHelper = require('../handlebar/helpers/version.helper.js');
 
 const readFile = util.promisify(fs.readFile);
 
+function getLink(links) {
+    let localLink = links?.[0];
+
+    const markdownLinkRegex = new RegExp(/^\[(.+)\]\((.+)\)/);
+    const markdownRegexArr = markdownLinkRegex.exec(localLink);
+    if ((markdownRegexArr?.length ?? 0) > 2) {
+        localLink = markdownRegexArr[2];
+    }
+
+    return localLink ?? '/';
+}
+
 async function generateItemPage() {
     process.env['NODE_ENV'] = pjson.version;
     Handlebars.registerHelper('date', dateHelper);
@@ -30,7 +42,8 @@ async function generateItemPage() {
     for (const commListItem of allCommListItems) {
         const templateData = {
             ...projectData,
-            data: { ...commListItem }
+            data: { ...commListItem },
+            link: getLink(commListItem.links),
         };
         const html = templateFunc(templateData);
         const fileName = (commListItem.customId != null && commListItem.customId.length > 0)

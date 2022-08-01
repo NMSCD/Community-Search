@@ -22,7 +22,7 @@ export const CommunityCardModal: Component<IProps> = (props: IProps) => {
         const markdownRegexArr = markdownLinkRegex.exec(link);
         if ((markdownRegexArr?.length ?? 0) > 2) {
             linkComment = `(${markdownRegexArr![1]})`;
-            localLink = markdownRegexArr![2]
+            localLink = markdownRegexArr![2];
         }
 
         const linkRegex = new RegExp('^(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/?\n]+)');

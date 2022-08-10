@@ -52,7 +52,7 @@ export const CommunityItems: Component = () => {
 
     return (
         <Box id="main" pb="10em">
-            <Container pt="10em" pb="5em" className="noselect">
+            <Container pt="10em" pb="5em" className="header-container noselect">
                 <div class="background-bg"></div>
                 <div class="background star1"></div>
                 <div class="background star2"></div>
@@ -60,7 +60,7 @@ export const CommunityItems: Component = () => {
                 <Heading size="5xl" pb="0.5em">Find some awesome NMS communities!</Heading>
                 <Text size="2xl">There were too many NMS related websites, so we created another NMS related website to link to all of them!</Text>
             </Container>
-            <Container pb="7em">
+            <Container class="header-container-divider" pb="7em">
                 <Divider style={{ color: themeColours.primary }} />
             </Container>
             <Container

@@ -3,6 +3,7 @@
 @import "custom/chips";
 @import "custom/scrollbar";
 @import "custom/background";
+@import "custom/general";
 @import "custom/card";
 @import "custom/modal";
 @import "custom/table";
@@ -28,24 +29,35 @@ body {
     }
 }
 
+.hidden-in-desktop {
+    @media screen and (min-width: 980px) {
+        display: none !important;
+    }
+}
+
+.hidden-in-mobile {
+    @media screen and (max-width: 980px) {
+        display: none !important;
+    }
+}
+
+.hidden-in-tiny-mobile {
+    @media screen and (max-width: 500px) {
+        display: none !important;
+    }
+}
+
 .pointer {
     cursor: pointer;
 }
 
 .noselect {
     -webkit-touch-callout: none;
-    /* iOS Safari */
     -webkit-user-select: none;
-    /* Safari */
     -khtml-user-select: none;
-    /* Konqueror HTML */
     -moz-user-select: none;
-    /* Old versions of Firefox */
     -ms-user-select: none;
-    /* Internet Explorer/Edge */
     user-select: none;
-    /* Non-prefixed version, currently
-                                    supported by Chrome, Edge, Opera and Firefox */
 }
 
 .max-lines-1 {
@@ -53,13 +65,4 @@ body {
     overflow: hidden;
     display: block;
     text-overflow: ellipsis;
-}
-
-.row.no-space {
-    margin-left: 0;
-    margin-right: 0.5em;
-}
-
-.inner.wide {
-    max-width: 86em !important;
 }

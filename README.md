@@ -8,8 +8,15 @@ This project aims to be the "Yellow pages" of the NMS community. Our goal is to 
   ![madeWithLove](./.github/badges/built-with-love.svg)
 
   <br /> 
+  
+  ![SolidJS](https://img.shields.io/badge/Solid%20JS-2C4F7C?style=for-the-badge&logo=solid&logoColor=white)
+  ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+  ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+  ![Airtable](https://img.shields.io/badge/Airtable-18BFFF?style=for-the-badge&logo=Airtable&logoColor=white)
+
 </div>
 
+<br />
 
 ## Submitting a Community Link
 

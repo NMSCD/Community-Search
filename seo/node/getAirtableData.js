@@ -1,6 +1,7 @@
 const fs = require('fs');
 const util = require('util');
 const Airtable = require('airtable');
+const axios = require('axios');
 
 require('dotenv').config();
 
@@ -82,9 +83,9 @@ async function generateJsonFromAirtable() {
         const allItems = [];
         base(currentTable.name).select({
             view: currentTable.view
-        }).eachPage(function page(records, fetchNextPage) {
+        }).eachPage(async function page(records, fetchNextPage) {
 
-            records.forEach(function (record) {
+            for (const record of records) {
                 let obj = {
                     id: record.id,
                 };
@@ -101,8 +102,11 @@ async function generateJsonFromAirtable() {
                         console.log(ex);
                     }
                 }
-                allItems.push(obj);
-            });
+
+                const newObj = await downloadImagesFromAirtableObject(obj);
+                allItems.push(newObj);
+            }
+
             fetchNextPage();
         }, function done(err) {
             if (err) {
@@ -136,5 +140,51 @@ async function generateJsonFromAirtable() {
     }
 }
 
+async function downloadImagesFromAirtableObject(obj) {
+    const baseRelToRootPath = '/assets/img/generated/{0}.png';
+    const physicalPath = '../public{1}';
+
+    const rowId = obj.customId ?? obj.id;
+
+    try {
+        const relToRootPath = baseRelToRootPath.replace('{0}', rowId);
+
+        await downloadImage(obj.icon, physicalPath.replace('{1}', relToRootPath));
+        obj.icon = relToRootPath;
+
+        const newBanners = [];
+        for (let bannerIndex = 0; bannerIndex < obj.banners.length; bannerIndex++) {
+            const banner = obj.banners[bannerIndex];
+            const bannerRelToRootPath = baseRelToRootPath.replace('{0}', `${rowId}-banner${bannerIndex + 1}`);
+
+            await downloadImage(banner, physicalPath.replace('{1}', bannerRelToRootPath));
+            newBanners.push(bannerRelToRootPath);
+        }
+        obj.banners = newBanners;
+
+    } catch (e) {
+
+    }
+
+    return obj;
+}
+
+
+async function downloadImage(url, image_path) {
+    const writer = fs.createWriteStream(image_path)
+
+    const response = await axios({
+        url,
+        method: 'GET',
+        responseType: 'stream'
+    });
+
+    response.data.pipe(writer)
+
+    return new Promise((resolve, reject) => {
+        writer.on('finish', resolve)
+        writer.on('error', reject)
+    })
+};
 
 generateJsonFromAirtable();

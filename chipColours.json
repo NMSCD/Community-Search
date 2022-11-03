@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Reddit",
+        "colour": "#ffdaf6"
+    },
+    {
+        "name": "Discord",
+        "colour": "#ede2fe"
+    },
+    {
+        "name": "Website",
+        "colour": "#cfdfff"
+    },
+    {
+        "name": "Wiki",
+        "colour": "#eeeeee"
+    },
+    {
+        "name": "Twitter",
+        "colour": "#d0f0fd"
+    },
+    {
+        "name": "Youtube",
+        "colour": "#fee2d5"
+    },
+    {
+        "name": "Civilization",
+        "colour": "#ffeab6"
+    },
+    {
+        "name": "App",
+        "colour": "#d1f7c4"
+    },
+    {
+        "name": "Tool",
+        "colour": "#d1f7c4"
+    },
+    {
+        "name": "Resource",
+        "colour": "#ffdaf6"
+    },
+    {
+        "name": "Amino",
+        "colour": "#c2f5e9"
+    },
+    {
+        "name": "Facebook",
+        "colour": "#ede2fe"
+    },
+    {
+        "name": "Company",
+        "colour": "#ffeab6"
+    },
+    {
+        "name": "Forum",
+        "colour": "#ffdce5"
+    },
+    {
+        "name": "Game",
+        "colour": "#d0f0fd"
+    }
+]

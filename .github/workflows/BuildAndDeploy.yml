@@ -40,8 +40,8 @@ jobs:
 
       - name: Copy compiled data to public folder
         run: |
-          cp ./assets/data/chipColours.json ../../../public/chipColours.json
-          cp ./assets/data/communityList.json ../../../public/communityList.json
+          cp ./src/assets/data/chipColours.json ./public/chipColours.json
+          cp ./src/assets/data/communityList.json ./public/communityList.json
 
       - name: Build JS
         run: |

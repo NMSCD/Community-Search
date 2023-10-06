@@ -5,7 +5,7 @@ Twitter: @AssistantNMS
 From: Almere, The Netherlands
 
 /* SITE */
-Last update: 2023-09-25
+Last update: 2023-10-06
 Language: English
 Doctype:HTML5
 IDE: Visual Studio Code

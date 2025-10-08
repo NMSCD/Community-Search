@@ -1,8 +1,11 @@
+@use 'sass:color';
+@use "var";
+
 #floating-button {
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    background-color: darken($linkColour, 15%);
+    background-color: color.scale(var.$linkColour, $lightness: -15%);
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -11,7 +14,7 @@
     transition: background-color 250ms;
 
     &:hover {
-        background-color: darken($linkColour, 7%);
+        background-color: color.scale(var.$linkColour, $lightness: -7%);
     }
 }
 

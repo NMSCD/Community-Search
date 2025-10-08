@@ -1,13 +1,13 @@
-@import "custom/var";
-@import "custom/fab";
-@import "custom/chips";
-@import "custom/scrollbar";
-@import "custom/background";
-@import "custom/general";
-@import "custom/card";
-@import "custom/modal";
-@import "custom/table";
-@import "custom/slider";
+@use "custom/var";
+@use "custom/fab";
+@use "custom/chips";
+@use "custom/scrollbar";
+@use "custom/background";
+@use "custom/general";
+@use "custom/card";
+@use "custom/modal";
+@use "custom/table";
+@use "custom/slider";
 
 body {
     background-color: rgb(50, 50, 50);
@@ -25,7 +25,7 @@ body {
     }
 
     a {
-        color: $linkColour;
+        color: var.$linkColour;
     }
 }
 
